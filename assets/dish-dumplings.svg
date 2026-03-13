@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Gasless Dumplings">
+  <rect width="800" height="500" fill="#2b1d3a"/>
+  <path d="M160 330 Q240 190 320 330 Z" fill="#f6d0a5"/>
+  <path d="M320 330 Q400 190 480 330 Z" fill="#f1c79c"/>
+  <path d="M480 330 Q560 190 640 330 Z" fill="#eab78a"/>
+  <text x="55" y="85" fill="#ff37d3" font-size="54" font-family="Segoe UI, Arial" font-weight="700">GASLESS DUMPLINGS</text>
+</svg>

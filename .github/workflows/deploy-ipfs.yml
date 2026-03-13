@@ -1,0 +1,56 @@
+name: Build and Deploy to IPFS (Pinata)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-and-pin:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static website
+        run: npm run build
+
+      - name: Upload /dist to IPFS via Pinata
+        env:
+          PINATA_JWT: ${{ secrets.PINATA_JWT }}
+        run: |
+          if [ -z "$PINATA_JWT" ]; then
+            echo "PINATA_JWT secret is missing" >&2
+            exit 1
+          fi
+
+          cd dist
+          tar -czf ../dist.tar.gz .
+          cd ..
+
+          RESPONSE=$(curl --silent --show-error --fail \
+            -X POST "https://api.pinata.cloud/pinning/pinFileToIPFS" \
+            -H "Authorization: Bearer $PINATA_JWT" \
+            -F "file=@dist.tar.gz" \
+            -F 'pinataMetadata={"name":"web3-restaurant-dist"};type=application/json')
+
+          echo "Pinata response: $RESPONSE"
+          CID=$(echo "$RESPONSE" | sed -n 's/.*"IpfsHash":"\([^"]*\)".*/\1/p')
+
+          if [ -z "$CID" ]; then
+            echo "Failed to parse CID from Pinata response" >&2
+            exit 1
+          fi
+
+          echo "Uploaded CID: $CID"
+          echo "Gateway URL: https://gateway.pinata.cloud/ipfs/$CID"

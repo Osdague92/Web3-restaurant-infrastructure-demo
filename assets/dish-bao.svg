@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Neon Bao Trio">
+  <rect width="800" height="500" fill="#2f132a"/>
+  <circle cx="180" cy="250" r="110" fill="#ffb77a"/>
+  <circle cx="400" cy="250" r="110" fill="#ffc58f"/>
+  <circle cx="620" cy="250" r="110" fill="#ffcf9e"/>
+  <text x="40" y="70" fill="#4ef6ff" font-size="54" font-family="Segoe UI, Arial" font-weight="700">NEON BAO TRIO</text>
+</svg>

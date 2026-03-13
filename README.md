@@ -1,57 +1,73 @@
-Este proyecto demuestra cómo un restaurante o negocio gastronómico puede tener una presencia digital descentralizada, utilizando tecnologías Web3 en lugar de infraestructura web tradicional.
+# web3-restaurant-infrastructure-demo
 
-El objetivo es mostrar una arquitectura simple pero funcional donde un sitio web estático se despliega en la red InterPlanetary File System (IPFS) y se vincula a un dominio Web3 registrado en Unstoppable Domains.
+A decentralized restaurant landing page prototype for **Fogón del Chino**, built with **Vite + Vanilla JavaScript**, designed for static hosting on **IPFS** and mapping to a **Web3 domain**.
 
-A diferencia de los sitios web tradicionales que dependen de proveedores centralizados, esta demo presenta una alternativa donde el contenido puede distribuirse a través de nodos descentralizados.
+## Features
 
-Características principales
+- Hero section with neon styling and Chinese street-food aesthetic.
+- Dynamic menu grid of dishes with image, description, and price.
+- Web3 payments section for BTC, ETH, and MATIC wallet support.
+- Educational Web3 section covering IPFS, Web3 domains, and censorship resistance.
+- Footer links to OpenSea, Polygonscan, and GitHub.
+- Mobile-first responsive design with dark UI and neon accents.
+- Lightweight `.svg` images and lazy loading for performance.
 
-Sitio web estático optimizado para IPFS
+## Tech Stack
 
-Dominio Web3 (.blockchain)
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Vite
 
-Menú digital para restaurante
+## Local Development
 
-Soporte para pagos directos en criptomonedas
+```bash
+npm install
+npm run dev
+```
 
-Diseño responsive optimizado para móviles
+## Build for IPFS
 
-Arquitectura ligera sin frameworks pesados
+```bash
+npm run build
+```
 
-Arquitectura del proyecto
-Frontend (HTML / CSS / JavaScript)
-        ↓
-Build estático
-        ↓
-IPFS Deployment
-        ↓
-Blockchain Domain Resolution
-        ↓
-Access via IPFS Gateway
-Caso de uso
+The production-ready static site is generated in:
 
-Este repositorio sirve como demo de infraestructura Web3 para restaurantes, permitiendo explorar:
+```bash
+dist/
+```
 
-Menús digitales descentralizados
+This folder is ready to upload directly to IPFS pinning services.
 
-Pagos en criptomonedas
+## GitHub Action: IPFS Deployment via Pinata
 
-Hosting resistente a censura
+The workflow file is located at:
 
-Integración con dominios Web3
+```bash
+.github/workflows/deploy-ipfs.yml
+```
 
-Tecnologías utilizadas
+It performs:
 
-HTML5
+1. Checkout repo
+2. Install dependencies
+3. Build the site
+4. Upload `dist` artifact to IPFS using Pinata API
 
-CSS3
+### Required GitHub Secret
 
-JavaScript
+- `PINATA_JWT` — JWT from your Pinata account.
 
-IPFS
+## Suggested Web3 Domain Flow
 
-Web3 Domains
+1. Upload `dist` to IPFS and note CID.
+2. Configure your Web3 domain (e.g., ENS/Unstoppable) content hash to that CID.
+3. Access your decentralized site from compatible wallets, browsers, or gateways.
 
-Objetivo del proyecto
+## Nota sobre PR y archivos binarios
 
-Este proyecto busca demostrar cómo pequeñas empresas pueden explorar infraestructura descentralizada para construir presencia digital sin depender completamente de plataformas centralizadas.
+GitHub no puede mostrar diff legible de imágenes binarias (`.webp`, `.png`, etc.), por eso las revisiones con comentarios inline se dificultan.
+Para facilitar revisión de código en PR, este demo usa imágenes **SVG en texto plano**, que sí permiten diff y comentarios línea por línea.
+
+Si prefieres assets fotográficos `.webp` para producción, puedes reemplazar los SVG sin cambiar la arquitectura estática/IPFS.
