@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Chainlink Noodles">
+  <rect width="800" height="500" fill="#1a2742"/>
+  <path d="M100 320 C240 180, 500 420, 700 240" stroke="#ffc146" stroke-width="22" fill="none"/>
+  <path d="M120 360 C300 220, 470 430, 710 290" stroke="#ff9c2e" stroke-width="16" fill="none"/>
+  <text x="40" y="80" fill="#4ef6ff" font-size="52" font-family="Segoe UI, Arial" font-weight="700">CHAINLINK NOODLES</text>
+</svg>

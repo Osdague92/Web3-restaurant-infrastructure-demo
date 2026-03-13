@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Fogón del Chino: decentralized Web3 restaurant website prototype ready for IPFS and blockchain domains."
+    />
+    <title>Fogón del Chino | Web3 Restaurant</title>
+    <link rel="preload" href="./assets/hero-food.svg" as="image" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="hero" id="home">
+      <img
+        class="hero__bg"
+        src="./assets/hero-food.svg"
+        alt="Chinese street food selection"
+        loading="eager"
+        decoding="async"
+      />
+      <div class="hero__overlay"></div>
+      <div class="hero__content container">
+        <p class="hero__kicker">Decentralized Dining Experience</p>
+        <h1 class="neon-title">Fogón del Chino</h1>
+        <p class="hero__subtitle">
+          A static Web3-native restaurant site built for censorship-resistant hosting on IPFS and
+          blockchain domains.
+        </p>
+        <a class="btn" href="#menu">Explore Menu</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="section container" id="menu">
+        <div class="section__heading">
+          <h2>Street Menu</h2>
+          <p>Classic wok-fire flavors tuned for digital nomads and on-chain communities.</p>
+        </div>
+        <div class="menu-grid" id="menu-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="section section--alt" id="payments">
+        <div class="container">
+          <div class="section__heading">
+            <h2>Web3 Payments</h2>
+            <p>Pay from any compatible wallet. Transactions settle transparently on-chain.</p>
+          </div>
+          <div class="payments-grid">
+            <article class="payment-card">
+              <h3>BTC</h3>
+              <p class="wallet">bc1qfogonchino8p3t9vx7f2s5q2p4z80m3p3ws8sa2</p>
+            </article>
+            <article class="payment-card">
+              <h3>ETH</h3>
+              <p class="wallet">0xF0g0nD3lCh1n0E7H5A2A5Ff9876A2B8E118A90C1</p>
+            </article>
+            <article class="payment-card">
+              <h3>MATIC</h3>
+              <p class="wallet">0xF0g0nD3lCh1n0M471cAA1D29e95f4c2A88B090EF</p>
+            </article>
+          </div>
+          <div class="qr-area">
+            <img
+              src="./assets/wallet-qr.svg"
+              alt="QR code for crypto payments"
+              loading="lazy"
+              decoding="async"
+            />
+            <p>
+              Scan the QR code to open your wallet app instantly. Guests can pay in BTC, ETH, or
+              MATIC without sharing card details.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" id="about-web3">
+        <div class="section__heading">
+          <h2>About Web3 Hosting</h2>
+        </div>
+        <div class="info-grid">
+          <article class="info-card">
+            <h3>What is IPFS?</h3>
+            <p>
+              IPFS is a peer-to-peer file system that serves content by cryptographic hash instead
+              of one centralized server.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>What is a Web3 domain?</h3>
+            <p>
+              A Web3 domain maps a human-readable name to decentralized content, wallets, and smart
+              contracts.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Why is this censorship-resistant?</h3>
+            <p>
+              Because files are replicated across nodes, there is no single server to seize or
+              block, making takedowns significantly harder.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__content">
+        <p>© <span id="year"></span> Fogón del Chino</p>
+        <nav aria-label="External links">
+          <a href="https://opensea.io" target="_blank" rel="noreferrer">OpenSea</a>
+          <a href="https://polygonscan.com" target="_blank" rel="noreferrer">Polygonscan</a>
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Visit GitHub profile"
+            >GitHub</a
+          >
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
